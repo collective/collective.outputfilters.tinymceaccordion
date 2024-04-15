@@ -1,0 +1,17 @@
+graft src/
+global-exclude *.pyc
+
+include *.md
+include .coveragerc
+include *.yaml
+
+recursive-include sass *
+recursive-include jinja *
+recursive-include resources *
+
+exclude tox.ini
+exclude *.txt
+exclude .gitlab-ci.yml
+exclude .rst
+
+recursive-exclude news *

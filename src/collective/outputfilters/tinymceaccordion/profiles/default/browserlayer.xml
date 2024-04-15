@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layers>
+  <layer interface="collective.outputfilters.tinymceaccordion.interfaces.ICollectiveOutputfiltersTinyMCEAccordionLayer"
+         name="collective_outputfilters_tinymceaccordion"
+  />
+</layers>

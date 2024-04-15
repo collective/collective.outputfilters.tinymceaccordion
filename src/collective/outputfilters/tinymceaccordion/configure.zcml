@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.outputfilters.tinymceaccordion"
+    >
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include file="profiles.zcml" />
+
+
+  <adapter
+      factory=".filter.TinyMCEAccordionFilter"
+      provides="collective.outputfilters.tinymceaccordion.interfaces.ITinyMCEAccordionFilter"
+      for="*
+           *"
+      name="tinymce_accordion_filter"
+      />
+
+</configure>
