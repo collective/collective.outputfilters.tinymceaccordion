@@ -19,7 +19,7 @@
 
 ## TODO
 
-- [ ] Update registry record `plne.menu` , add insert accordion entry
+- [ ] Update registry record `plone.menu` , add insert accordion entry
 
 ## Who need this addon?
 
