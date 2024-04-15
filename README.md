@@ -2,6 +2,7 @@
 
 ![Plone Meta Workflow](https://github.com/collective/collective.outputfilters.tinymceaccordion/actions/workflows/meta.yml/badge.svg "Plone Meta Workflow")
 
+- [TODO](#todo)
 - [Who need this addon?](#who-need-this-addon)
 - [Registry Settings](#registry-settings)
 - [Install Addon via buildout](#install-addon-via-buildout)
@@ -15,6 +16,10 @@
 > This addon works only with Plone 6.1 and higher
 > 
 > please checkout https://github.com/plone/plone.base/tree/feature-%2362
+
+## TODO
+
+- [ ] Update registry record `plne.menu` , add insert accordion entry
 
 ## Who need this addon?
 
