@@ -124,6 +124,7 @@ Zope = [
   'Products.CMFCore', 'Products.CMFDynamicViewFTI',
 ]
 python-dateutil = ['dateutil']
+beautifulsoup4 = ['bs4']
 
 ##
 # Add extra configuration options in .meta.toml:

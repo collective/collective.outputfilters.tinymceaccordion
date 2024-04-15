@@ -53,25 +53,25 @@ setup(
     install_requires=[
         "setuptools",
         # -*- Extra requirements: -*-
-        "z3c.jbot",
         "Products.CMFPlone",
         "Products.GenericSetup",
-        "zope.i18nmessageid",
-        "zope.interface",
-        "zope.publisher",
+        "Zope",
+        "beautifulsoup4",
+        "plone.outputfilters",
+        "setuptools",
     ],
     extras_require={
         "test": [
             "Products.CMFPlone",
+            "lxml",
             "plone.api",
-            "plone.app.dexterity",
             "plone.app.robotframework[debug]",
             "plone.app.testing",
+            "plone.app.textfield",
             "plone.base",
             "plone.browserlayer",
-            "plone.restapi",
             "plone.testing>=5.0.0",
-            "robotsuite",
+            "transaction",
         ],
     },
     entry_points="""
