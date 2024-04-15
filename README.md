@@ -122,6 +122,9 @@ default_context:
   initial_user_name: "admin"
   initial_user_password: "admin"
   wsgi_listen: "localhost:8080"
+  db_storage: direct
+  debug_mode: true
+  verbose_security: true
 ```
 
 create a plone instance via pip
