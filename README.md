@@ -2,24 +2,20 @@
 
 ![Plone Meta Workflow](https://github.com/collective/collective.outputfilters.tinymceaccordion/actions/workflows/meta.yml/badge.svg "Plone Meta Workflow")
 
-- [TODO](#todo)
-- [Who need this addon?](#who-need-this-addon)
-- [Registry Settings](#registry-settings)
-- [Install Addon via buildout](#install-addon-via-buildout)
-- [Install Addon via pip](#install-addon-via-pip)
-- [Install a Testenvironment](#install-a-testenvironment)
-- [Start the instance](#start-the-instance)
-- [Format and Linting](#format-and-linting)
-- [Testing](#testing)
+- [README](#readme)
+  - [Who need this addon?](#who-need-this-addon)
+  - [Registry Settings](#registry-settings)
+  - [Install Addon via buildout](#install-addon-via-buildout)
+  - [Install Addon via pip](#install-addon-via-pip)
+  - [Install a Testenvironment](#install-a-testenvironment)
+  - [Start the instance](#start-the-instance)
+  - [Format and Linting](#format-and-linting)
+  - [Testing](#testing)
 
 > [!IMPORTANT]  
 > This addon works only with Plone 6.1 and higher
 > 
 > please checkout https://github.com/plone/plone.base/tree/feature-%2362
-
-## TODO
-
-- [ ] Update registry record `plone.menu` , add insert accordion entry
 
 ## Who need this addon?
 
@@ -92,9 +88,7 @@ Some values in registry records are set:
 - aria-labelledby
 - data-bs-parent
 
-Please check the TinyMCE Controlpanel if the values are set correct.
-
-Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE Controlpanel
+Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE Controlpanel. PEr default this addon enable the accordion option in the `insert` menu section
 
 ***Menu***
 
@@ -106,6 +100,8 @@ Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE 
     },
 }
 ```
+
+Please check the TinyMCE controlpanel that the values are set correct.
 
 ## Install Addon via buildout
 
