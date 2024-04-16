@@ -88,7 +88,7 @@ Some values in registry records are set:
 - aria-labelledby
 - data-bs-parent
 
-Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE Controlpanel. PEr default this addon enable the accordion option in the `insert` menu section
+Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE Controlpanel. Per default this addon enable the accordion option in the `insert` menu section.
 
 ***Menu***
 
