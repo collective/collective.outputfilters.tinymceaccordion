@@ -58,7 +58,6 @@ setup(
         "Zope",
         "beautifulsoup4",
         "plone.outputfilters",
-        "setuptools",
     ],
     extras_require={
         "test": [
