@@ -3,6 +3,8 @@ from Products.CMFPlone.interfaces import INonInstallable
 from zope.component import getUtility
 from zope.interface import implementer
 
+import json
+
 
 PLUGINS = ["accordion"]
 VALID_TAGS = ["summary", "details", "button"]
@@ -37,6 +39,16 @@ def set_registry_records(context):
     for custom_attribute in CUSTOM_ATTRIBUTES:
         if custom_attribute not in record.value:
             record.value.append(custom_attribute)
+
+    record = registry.records.get("plone.menu")
+    menu_values = json.loads(record.value)
+    insert_block = menu_values.get("insert", {})
+    items = insert_block.get("items", "")
+    if "accordion" not in items:
+        items = f"{items} accordion"
+    insert_block.update({"items": items})
+    menu_values.update(insert_block)
+    record.value = json.dumps(menu_values, indent=4)
 
 
 @implementer(INonInstallable)
