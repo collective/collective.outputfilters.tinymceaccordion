@@ -9,18 +9,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.outputfilters.tinymceaccordion\n"
 
 #: collective/outputfilters/tinymceaccordion/profiles.zcml:16
 msgid "Installs the collective.outputfilters.tinymceaccordion add-on."
-msgstr ""
+msgstr "Erweiterung collective.outputfilters.tinymceaccordion installieren"
 
 #: collective/outputfilters/tinymceaccordion/profiles.zcml:25
 msgid "Uninstalls the collective.outputfilters.tinymceaccordion add-on."
-msgstr ""
+msgstr "Erweiterung collective.outputfilters.tinymceaccordion deinstallieren"
 
 #: collective/outputfilters/tinymceaccordion/profiles.zcml:16
 msgid "collective.outputfilters.tinymceaccordion"
