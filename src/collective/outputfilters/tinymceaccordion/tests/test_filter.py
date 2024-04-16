@@ -53,7 +53,7 @@ TINYMCE_MARKUP_NO_PLUGIN = "<p>The answer is 42</p>"
 class FilterIntegrationTest(unittest.TestCase):
     layer = COLLECTIVE_OUTPUTFILTER_TINYMCE_ACCORDION_INTEGRATION_TESTING
 
-    def test_xslt_transform(self):
+    def transform_with_plugin_markup(self):
         from collective.outputfilters.tinymceaccordion.filter import (
             transform_bs5_collapse,
         )
@@ -68,7 +68,7 @@ class FilterIntegrationTest(unittest.TestCase):
         result = tree.xpath("//div[@class='accordion']")
         self.assertEqual(2, len(result), "it should be two accordions in the markup")
 
-    def test_xslt_transform_without_plugin_markup(self):
+    def test_transform_without_plugin_markup(self):
         from collective.outputfilters.tinymceaccordion.filter import (
             transform_bs5_collapse,
         )
