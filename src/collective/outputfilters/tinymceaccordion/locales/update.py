@@ -6,9 +6,9 @@ import subprocess
 domain = "collective.outputfilters.tinymceaccordion"
 os.chdir(pkg_resources.resource_filename(domain, ""))
 os.chdir("../../../")
-target_path = "src/collective.outputfilters.tinymceaccordion/"
+target_path = "collective/outputfilters/tinymceaccordion/"
 locale_path = target_path + "locales/"
-i18ndude = "./bin/i18ndude"
+i18ndude = "i18ndude"
 
 # ignore node_modules files resulting in errors
 excludes = '"*.html *json-schema*.xml"'
