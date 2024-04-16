@@ -66,6 +66,8 @@ class TestSetup(unittest.TestCase):
         from plone.registry.interfaces import IRegistry
         from zope.component import getUtility
 
+        import json
+
         registry = getUtility(IRegistry)
 
         record = registry.records.get("plone.plugins")
@@ -79,6 +81,11 @@ class TestSetup(unittest.TestCase):
         record = registry.records.get("plone.custom_attributes")
         for custom_attribute in CUSTOM_ATTRIBUTES:
             self.assertIn(custom_attribute, record.value)
+
+        record = registry.records.get("plone.menu")
+        menu_values = json.loads(record.value)
+        items = menu_values.get("insert", {}).get("items", "")
+        self.assertIn("accordion", items)
 
 
 class TestUninstall(unittest.TestCase):
