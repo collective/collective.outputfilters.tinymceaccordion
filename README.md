@@ -1,6 +1,6 @@
 # README
 
-![Plone Meta Workflow](https://github.com/collective/collective.outputfilters.tinymceaccordion/actions/workflows/meta.yml/badge.svg "Plone Meta Workflow")
+![Plone Meta Workflow](https://github.com/collective/collective.outputfilters.tinymceaccordion/actions/workflows/meta.yml/badge.svg "Plone Meta Workflow") [![codecov](https://codecov.io/gh/collective/collective.outputfilters.tinymceaccordion/graph/badge.svg?token=Fr1Av8spXo "Code Coverage Workflow")](https://codecov.io/gh/collective/collective.outputfilters.tinymceaccordion)
 
 - [README](#readme)
   - [Who need this addon?](#who-need-this-addon)
