@@ -1,6 +1,7 @@
 [report]
 include =
-    src//*
+    src/*
 omit =
     */test*
     */upgrades/*
+    */locales/*
