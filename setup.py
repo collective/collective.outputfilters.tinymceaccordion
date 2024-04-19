@@ -14,8 +14,8 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.outputfilters.tinymceaccordion",
-    version="1.0a1",
-    description="An add-on for Plone",
+    version="1.0a2",
+    description="Addon for Plone 6 - Plone Outputfilter to transform TinyMCE Markup to Bootstrap5 Accordion",
     long_description=long_description,
     long_description_content_type="text/markdown",
     # Get more from https://pypi.org/classifiers/
