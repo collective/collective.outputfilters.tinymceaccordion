@@ -2,6 +2,6 @@
 
 <!-- towncrier release notes start -->
 
-## 1.0a1 (2024-04-19)
+## 1.0a2 (unreleased)
 
 - Initial release. @1letter
