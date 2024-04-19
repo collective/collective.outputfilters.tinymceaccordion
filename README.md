@@ -15,7 +15,7 @@
 > [!IMPORTANT]  
 > This addon works only with Plone 6.1 and higher
 > 
-> please checkout https://github.com/plone/plone.base/tree/feature-%2362
+> please checkout https://github.com/plone/plone.base/tree/main
 
 ## Who need this addon?
 
@@ -135,7 +135,8 @@ install cookiecutter, if needed
 ```bash
 python3 -m venv ./venv
 source venv/bin/activate
-pip install -r requirements.txt
+pip install mxdev
+pip install -r requirements-mxdev.txt
 pip install cookiecutter
 cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
 deactivate
