@@ -53,7 +53,7 @@ TINYMCE_MARKUP_NO_PLUGIN = "<p>The answer is 42</p>"
 class FilterIntegrationTest(unittest.TestCase):
     layer = COLLECTIVE_OUTPUTFILTER_TINYMCE_ACCORDION_INTEGRATION_TESTING
 
-    def transform_with_plugin_markup(self):
+    def test_transform_with_plugin_markup(self):
         from collective.outputfilters.tinymceaccordion.filter import (
             transform_bs5_collapse,
         )
