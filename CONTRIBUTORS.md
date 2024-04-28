@@ -1,3 +1,3 @@
 # Contributors
 
-- 1letter, 1letter@gmx.de
+- 1letter
