@@ -42,12 +42,14 @@ def set_registry_records(context):
 
     record = registry.records.get("plone.menu")
     menu_values = json.loads(record.value)
-    insert_block = menu_values.get("insert", {})
+    insert_block = menu_values.get("insert", {"title": "Insert", "items": ""})
     items = insert_block.get("items", "")
+
     if "accordion" not in items:
         items = f"{items} accordion"
+
     insert_block.update({"items": items})
-    menu_values.update(insert_block)
+    menu_values.update({"insert": insert_block})
     record.value = json.dumps(menu_values, indent=4)
 
 
