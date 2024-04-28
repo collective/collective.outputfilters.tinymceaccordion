@@ -36,6 +36,7 @@ setup(
     ],
     keywords="Python Plone CMS",
     author="1letter",
+    author_email="1letter@gmx.de",
     url="https://github.com/collective/collective.outputfilters.tinymceaccordion",
     project_urls={
         "PyPI": "https://pypi.org/project/collective.outputfilters.tinymceaccordion/",
