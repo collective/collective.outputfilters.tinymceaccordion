@@ -156,6 +156,8 @@ Instance Shutdown via `ctrl+c`
 
 use tox
 
+`tox -e init`
+
 `tox -e format`
 
 `tox -e lint`
@@ -163,6 +165,8 @@ use tox
 ## Testing
 
 use tox
+
+`tox -e init`
 
 `tox -e test`
 
