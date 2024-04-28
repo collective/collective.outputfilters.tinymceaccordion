@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0a3 (2024-04-28)
+
+
+### Internal:
+
+- Update configuration files @plone 
+
 ## 1.0a3 (unreleased)
 
 
