@@ -46,11 +46,17 @@ local.cfg
 /venv/
 .installed.txt
 
-.coverage.test
 report.html
 log.html
 output.xml
 robot_log.html
 robot_output.xml
 robot_report.html
-mxdev.inline
+
+##
+# Add extra configuration options in .meta.toml:
+#  [gitignore]
+#  extra_lines = """
+#  _your own configuration lines_
+#  """
+##

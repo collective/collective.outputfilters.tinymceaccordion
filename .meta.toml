@@ -14,3 +14,6 @@ robot_log.html
 robot_output.xml
 robot_report.html
 """
+
+[tox]
+use_mxdev = true
