@@ -15,7 +15,7 @@
 > [!IMPORTANT]  
 > This addon works only with Plone 6.1 and higher
 > 
-> please checkout https://github.com/plone/plone.base/tree/main
+> For Plone 6.0 use plone.staticresources >= 2.2.x 
 
 ## Who need this addon?
 
@@ -156,6 +156,8 @@ Instance Shutdown via `ctrl+c`
 
 use tox
 
+`tox -e init`
+
 `tox -e format`
 
 `tox -e lint`
@@ -163,6 +165,8 @@ use tox
 ## Testing
 
 use tox
+
+`tox -e init`
 
 `tox -e test`
 
