@@ -112,9 +112,6 @@ add `collective.outputfilters.tinymceaccordion` to your egg section in buildout.
 
 `pip install collective.outputfilters.tinymceaccordion`
 
-> [!IMPORTANT]  
-> The package is currently not on pypi please checkout the git repro
-
 ## Install a Testenvironment
 
 Create a configfile `instance.yaml` for cookiecutter
