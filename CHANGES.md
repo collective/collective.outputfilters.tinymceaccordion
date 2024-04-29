@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0a7 (2024-04-29)
+
+
+### Internal:
+
+- Update README @1letter #7
+
 ## 1.0a6 (2024-04-28)
 
 

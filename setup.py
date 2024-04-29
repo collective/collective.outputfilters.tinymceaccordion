@@ -14,7 +14,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.outputfilters.tinymceaccordion",
-    version="1.0a7.dev0",
+    version="1.0a7",
     description="Addon for Plone 6 - Plone Outputfilter to transform TinyMCE Markup to Bootstrap5 Accordion",
     long_description=long_description,
     long_description_content_type="text/markdown",
