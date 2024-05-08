@@ -13,5 +13,7 @@ exclude tox.ini
 exclude *.txt
 exclude .gitlab-ci.yml
 exclude .rst
+exclude Dockerfile
+exclude .dockerignore
 
 recursive-exclude news *
