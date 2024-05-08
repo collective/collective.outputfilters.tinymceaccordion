@@ -13,10 +13,27 @@ output.xml
 robot_log.html
 robot_output.xml
 robot_report.html
+forest.dot
+forest.json
+"""
+
+[github]
+extra_lines = """
+  plonetests:
+    uses: collective/workflow-plonematrix/.github/workflows/plonetest-matrix.yml@main
 """
 
 [tox]
 use_mxdev = true
+config_lines = """
+[gh-actions]
+python =
+    3.8: py38
+    3.9: py39
+    3.10: py310
+    3.11: py311
+    3.12: py312
+"""
 
 [pyproject]
 dependencies_mappings = [

@@ -1,5 +1,2 @@
 -c constraints.txt
-setuptools
-zc.buildout
-wheel
 -e .[test]
