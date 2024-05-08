@@ -1,0 +1,15 @@
+datadir/
+.tox/
+.github/
+dist/
+news/
+venv/
+tox.ini
+.coveragerc
+.editorconfig
+.flake8
+.gitattributes
+.gitignore
+.meta.toml
+.pre-commit-config.yaml
+instance.yaml
