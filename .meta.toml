@@ -20,7 +20,6 @@ forest.json
 [github]
 jobs = [
     "qa",
-    "test",
     "dependencies",
     "release_ready",
     "circular",
