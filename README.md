@@ -3,20 +3,20 @@
 ![Plone Meta Workflow](https://github.com/collective/collective.outputfilters.tinymceaccordion/actions/workflows/meta.yml/badge.svg "Plone Meta Workflow") [![codecov](https://codecov.io/gh/collective/collective.outputfilters.tinymceaccordion/graph/badge.svg?token=Fr1Av8spXo "Code Coverage Workflow")](https://codecov.io/gh/collective/collective.outputfilters.tinymceaccordion) ![PyPI - Versions from Framework Classifiers](https://img.shields.io/pypi/frameworkversions/plone/collective.outputfilters.tinymceaccordion)
 
 
-- [README](#readme)
-  - [Who need this addon?](#who-need-this-addon)
-  - [Registry Settings](#registry-settings)
-  - [Install Addon via buildout](#install-addon-via-buildout)
-  - [Install Addon via pip](#install-addon-via-pip)
-  - [Install a Testenvironment](#install-a-testenvironment)
-  - [Start the instance](#start-the-instance)
-  - [Format and Linting](#format-and-linting)
-  - [Testing](#testing)
+- [Who need this addon?](#who-need-this-addon)
+- [Registry Settings](#registry-settings)
+- [Install Addon via buildout](#install-addon-via-buildout)
+- [Install Addon via pip](#install-addon-via-pip)
+- [Install a Testenvironment](#install-a-testenvironment)
+- [Start the instance](#start-the-instance)
+- [Format and Linting](#format-and-linting)
+- [Testing](#testing)
+- [Testing with coverage](#testing-with-coverage)
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > This addon works only with Plone 6.1 and higher
-> 
-> For Plone 6.0 use plone.staticresources >= 2.2.x 
+>
+> For Plone 6.0 use plone.staticresources >= 2.2.x
 
 ## Who need this addon?
 
@@ -114,60 +114,20 @@ add `collective.outputfilters.tinymceaccordion` to your egg section in buildout.
 
 ## Install a Testenvironment
 
-Create a configfile `instance.yaml` for cookiecutter
-
-```yaml
-default_context:
-  initial_user_name: "admin"
-  initial_user_password: "admin"
-  wsgi_listen: "localhost:8080"
-  db_storage: direct
-  debug_mode: true
-  verbose_security: true
-```
-
-create a plone instance via pip
-
-install cookiecutter, if needed
-
-```bash
-python3 -m venv ./venv
-source venv/bin/activate
-pip install mxdev
-pip install -r requirements-mxdev.txt
-pip install cookiecutter
-cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-deactivate
-```
+run `make build`
 
 ## Start the instance
 
-```bash
-source venv/bin/activate
-runwsgi -v instance/etc/zope.ini
-deactivate
-```
-
-Instance Shutdown via `ctrl+c`
+run `make start`
 
 ## Format and Linting
 
-use tox
-
-`tox -e init`
-
-`tox -e format`
-
-`tox -e lint`
+run `make check`
 
 ## Testing
 
-use tox
+run `make test`
 
-`tox -e init`
+## Testing with coverage
 
-`tox -e test`
-
-debugging a single test, run the a specific test
-
-`zope-testrunner -pvc --test-path=./src -t FilterFunctionalTest`
+run `make test-coverage`
