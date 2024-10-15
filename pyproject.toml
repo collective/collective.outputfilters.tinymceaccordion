@@ -122,7 +122,7 @@ Zope = [
 ]
 python-dateutil = ['dateutil']
 pytest-plone = ['pytest', 'zope.pytestlayer', 'plone.testing', 'plone.app.testing']
-ignore-packages = ['zestreleaser.pocompile', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov']
+ignore-packages = ['zest.pocompile', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov', 'pytest']
 beautifulsoup4 = ['bs4']
 
 ##

@@ -55,6 +55,14 @@ setup(
     install_requires=[
         "setuptools",
         "Products.CMFPlone",
+        "Products.GenericSetup",
+        "bs4",
+        "plone.outputfilters",
+        "plone.registry",
+        "zope.component",
+        "zope.i18nmessageid",
+        "zope.interface",
+        "zope.publisher",
     ],
     extras_require={
         "test": [
@@ -62,7 +70,7 @@ setup(
             "zestreleaser.towncrier",
             "zest.pocompile",
             "plone.app.testing",
-            "plone.restapi[test]",
+            "plone.app.robotframework",
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.5.0",
