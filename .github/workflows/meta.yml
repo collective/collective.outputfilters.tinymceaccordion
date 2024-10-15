@@ -26,12 +26,19 @@ on:
 jobs:
   qa:
     uses: plone/meta/.github/workflows/qa.yml@main
+  test:
+    uses: plone/meta/.github/workflows/test.yml@main
+    with:
+
+       py-versions: '["3.12", "3.11", "3.10"]'
+  coverage:
+    uses: plone/meta/.github/workflows/coverage.yml@main
   dependencies:
     uses: plone/meta/.github/workflows/dependencies.yml@main
-  release_ready:
-    uses: plone/meta/.github/workflows/release_ready.yml@main
   circular:
     uses: plone/meta/.github/workflows/circular.yml@main
+  release_ready:
+    uses: plone/meta/.github/workflows/release_ready.yml@main
 
 ##
 # To modify the list of default jobs being created add in .meta.toml:
@@ -60,12 +67,6 @@ jobs:
 # py_versions = "['3.12', '3.11']"
 ##
 
-  plonetests:
-    uses: collective/workflow-plonematrix/.github/workflows/plonetest-matrix.yml@main
-  codecov:
-    uses: collective/workflow-plonematrix/.github/workflows/codecov.yml@main
-    secrets:
-       codecov-token: ${{ secrets.CODECOV_TOKEN }}
 
 ##
 # Specify additional jobs in .meta.toml:
