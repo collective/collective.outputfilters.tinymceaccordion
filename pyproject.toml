@@ -73,8 +73,8 @@ target-version = ["py38"]
 ##
 
 [tool.codespell]
-ignore-words-list = "discreet,"
-skip = "*.po,"
+ignore-words-list = "discreet,assertin,vew"
+skip = "*.po,*.min.js"
 ##
 # Add extra configuration options in .meta.toml:
 #  [pyproject]
@@ -121,6 +121,8 @@ Zope = [
   'Products.CMFCore', 'Products.CMFDynamicViewFTI',
 ]
 python-dateutil = ['dateutil']
+pytest-plone = ['pytest', 'zope.pytestlayer', 'plone.testing', 'plone.app.testing']
+ignore-packages = ['zest.pocompile', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov', 'pytest']
 beautifulsoup4 = ['bs4']
 
 ##

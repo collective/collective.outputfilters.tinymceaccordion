@@ -1,19 +1,20 @@
-graft src/
-global-exclude *.pyc
-
-include *.md
+graft src/collective
+graft docs
+graft news
+graft tests
+graft scripts
+include *.acceptance
 include .coveragerc
-include *.yaml
-
-recursive-include sass *
-recursive-include jinja *
-recursive-include resources *
-
-exclude tox.ini
-exclude *.txt
-exclude .gitlab-ci.yml
-exclude .rst
+include .dockerignore
+include .editorconfig
+include *.txt
+include *.yml
+include *.md
+exclude *-mxdev.txt
 exclude Dockerfile
-exclude .dockerignore
-
-recursive-exclude news *
+exclude mx.ini
+exclude Makefile
+recursive-exclude frontend *
+exclude instance.yaml
+global-exclude *.pyc
+global-exclude .DS_Store

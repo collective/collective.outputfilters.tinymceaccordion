@@ -54,6 +54,7 @@ robot_output.xml
 robot_report.html
 forest.dot
 forest.json
+.lock
 
 ##
 # Add extra configuration options in .meta.toml:
