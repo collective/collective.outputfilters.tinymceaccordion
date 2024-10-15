@@ -42,3 +42,9 @@ jobs = [
     "circular",
     "release_ready",
     ]
+extra_lines = """
+  codecov:
+    uses: collective/workflow-plonematrix/.github/workflows/codecov.yml@main
+    secrets:
+       codecov-token: ${{ secrets.CODECOV_TOKEN }}
+"""

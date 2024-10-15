@@ -67,6 +67,10 @@ jobs:
 # py_versions = "['3.12', '3.11']"
 ##
 
+  codecov:
+    uses: collective/workflow-plonematrix/.github/workflows/codecov.yml@main
+    secrets:
+       codecov-token: ${{ secrets.CODECOV_TOKEN }}
 
 ##
 # Specify additional jobs in .meta.toml:
