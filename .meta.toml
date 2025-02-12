@@ -1,9 +1,9 @@
 # Generated from:
-# https://github.com/plone/meta/tree/main/config/default
+# https://github.com/plone/meta/tree/main/src/plone/meta/default
 # See the inline comments on how to expand/tweak this configuration file
 [meta]
 template = "default"
-commit-id = "5d22fbf8"
+commit-id = "2.0.1.dev0"
 
 [gitignore]
 extra_lines = """
@@ -32,8 +32,15 @@ test_path = "/tests"
 use_mxdev = true
 test_deps_additional = ""
 
+envlist_lines = """
+    py312-plone60
+    py312-plone61
+    py311-plone60
+    py311-plone61
+"""
+
 [github]
-py_versions = "[\"3.12\", \"3.11\", \"3.10\"]"
+py_versions = "[\"3.13\",\"3.12\", \"3.11\", \"3.10\"]"
 jobs = [
     "qa",
     "test",
