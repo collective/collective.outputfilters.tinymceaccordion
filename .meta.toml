@@ -31,12 +31,15 @@ test_runner = "pytest"
 test_path = "/tests"
 use_mxdev = true
 test_deps_additional = ""
-
 envlist_lines = """
     py312-plone60
     py312-plone61
     py311-plone60
     py311-plone61
+"""
+testenv_options = """
+allowlist_externals =
+    echo
 """
 
 [github]
