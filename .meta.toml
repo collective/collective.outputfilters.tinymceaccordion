@@ -33,6 +33,7 @@ use_mxdev = true
 test_deps_additional = ""
 
 [github]
+py_versions = "[\"3.12\", \"3.11\", \"3.10\"]"
 jobs = [
     "qa",
     "test",
