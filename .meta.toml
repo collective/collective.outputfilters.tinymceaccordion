@@ -20,5 +20,15 @@ forest.json
 """
 
 
+[pyproject]
+codespell_skip = "*.min.js"
+codespell_ignores = "vew"
+dependencies_mappings = [
+    "beautifulsoup4 = ['bs4']",
+    ]
+dependencies_ignores = "['zest.pocompile', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov', 'pytest']"
+
+
+
 [tox]
 test_runner = "pytest"
