@@ -26,16 +26,14 @@ on:
 jobs:
   qa:
     uses: plone/meta/.github/workflows/qa.yml@2.x
-  test:
-    uses: plone/meta/.github/workflows/test.yml@2.x
   coverage:
     uses: plone/meta/.github/workflows/coverage.yml@2.x
   dependencies:
     uses: plone/meta/.github/workflows/dependencies.yml@2.x
-  circular:
-    uses: plone/meta/.github/workflows/circular.yml@2.x
   release_ready:
     uses: plone/meta/.github/workflows/release_ready.yml@2.x
+  circular:
+    uses: plone/meta/.github/workflows/circular.yml@2.x
 
 ##
 # To modify the list of default jobs being created add in .meta.toml:
@@ -56,11 +54,6 @@ jobs:
 # os_dependencies = "git libxml2 libxslt"
 ##
 
-  codecov:
-    uses: collective/workflow-plonematrix/.github/workflows/codecov.yml@main
-    needs: coverage
-    secrets:
-       codecov-token: ${{ secrets.CODECOV_TOKEN }}
 
 ##
 # Specify additional jobs in .meta.toml:

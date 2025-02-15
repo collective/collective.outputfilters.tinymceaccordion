@@ -5,6 +5,7 @@
 template = "default"
 commit-id = "2.0.1.dev0"
 
+
 [gitignore]
 extra_lines = """
 report.html
@@ -18,34 +19,6 @@ forest.json
 .lock
 """
 
-[pyproject]
-codespell_skip = "*.min.js"
-codespell_ignores = "vew"
-dependencies_mappings = [
-    "beautifulsoup4 = ['bs4']",
-    ]
-dependencies_ignores = "['zest.pocompile', 'zestreleaser.towncrier', 'zest.releaser', 'pytest-cov', 'pytest']"
 
 [tox]
 test_runner = "pytest"
-test_path = "/tests"
-use_mxdev = true
-test_deps_additional = ""
-
-[github]
-py_versions = "[\"3.12\", \"3.11\", \"3.10\"]"
-jobs = [
-    "qa",
-    "test",
-    "coverage",
-    "dependencies",
-    "circular",
-    "release_ready",
-    ]
-extra_lines = """
-  codecov:
-    uses: collective/workflow-plonematrix/.github/workflows/codecov.yml@main
-    needs: coverage
-    secrets:
-       codecov-token: ${{ secrets.CODECOV_TOKEN }}
-"""
