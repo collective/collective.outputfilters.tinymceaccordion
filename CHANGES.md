@@ -2,6 +2,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0 (2025-06-23)
+
+
+### Internal:
+
+- Update README @1letter readme
+- Update configuration files @plone 
+
+
+### Tests:
+
+- move tests to pytest @1letter pytest
+
 ## 1.0a7 (2024-04-29)
 
 
