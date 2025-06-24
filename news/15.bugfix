@@ -1,4 +1,0 @@
-Fix updating registry records when installing.
-Previously, our configuration changes could be gone after a restart.
-If your accordions don't work, you can deactivate and activate this add-on to fix it.
-@mauritsvanrees

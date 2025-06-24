@@ -1,3 +1,0 @@
-Do not require `plone.app.robotframework` for testing.
-We don't have robot tests.  This avoids running `rfbrowser init` on each test run.
-@mauritsvanrees

@@ -2,6 +2,23 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.1 (2025-06-24)
+
+
+### Bug fixes:
+
+- Fix updating registry records when installing.
+  Previously, our configuration changes could be gone after a restart.
+  If your accordions don't work, you can deactivate and activate this add-on to fix it.
+  @mauritsvanrees #15
+
+
+### Tests:
+
+- Do not require `plone.app.robotframework` for testing.
+  We don't have robot tests.  This avoids running `rfbrowser init` on each test run.
+  @mauritsvanrees 
+
 ## 1.0.0 (2025-06-23)
 
 
