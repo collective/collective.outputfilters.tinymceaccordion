@@ -4,8 +4,10 @@ from zope.component import getUtility
 from zope.interface import implementer
 
 import json
+import logging
 
 
+logger = logging.getLogger(__name__)
 PLUGINS = ["accordion"]
 VALID_TAGS = ["summary", "details", "button"]
 CUSTOM_ATTRIBUTES = [
@@ -20,37 +22,42 @@ CUSTOM_ATTRIBUTES = [
 ]
 
 
+def _add_to_record(record_name, values):
+    registry = getUtility(IRegistry)
+    changed = False
+    record_value = registry[record_name]
+    for value in values:
+        if value not in record_value:
+            record_value.append(value)
+            changed = True
+    if changed:
+        registry[record_name] = record_value
+        logger.info("Updated record %s", record_name)
+
+
 def set_registry_records(context):
     """add values to registry"""
+    _add_to_record("plone.plugins", PLUGINS)
+    _add_to_record("plone.valid_tags", VALID_TAGS)
+    _add_to_record("plone.custom_attributes", CUSTOM_ATTRIBUTES)
 
+    # Update the menu.
     registry = getUtility(IRegistry)
-
-    record = registry.records.get("plone.plugins")
-    for plugin in PLUGINS:
-        if plugin not in record.value:
-            record.value.append(plugin)
-
-    record = registry.records.get("plone.valid_tags")
-    for valid_tag in VALID_TAGS:
-        if valid_tag not in record.value:
-            record.value.append(valid_tag)
-
-    record = registry.records.get("plone.custom_attributes")
-    for custom_attribute in CUSTOM_ATTRIBUTES:
-        if custom_attribute not in record.value:
-            record.value.append(custom_attribute)
-
-    record = registry.records.get("plone.menu")
-    menu_values = json.loads(record.value)
+    record_name = "plone.menu"
+    value = registry[record_name]
+    menu_values = json.loads(value)
     insert_block = menu_values.get("insert", {"title": "Insert", "items": ""})
     items = insert_block.get("items", "")
 
-    if "accordion" not in items:
-        items = f"{items} accordion"
+    if "accordion" in items:
+        # Nothing left to do.
+        return
 
+    items = f"{items} accordion"
     insert_block.update({"items": items})
     menu_values.update({"insert": insert_block})
-    record.value = json.dumps(menu_values, indent=4)
+    registry[record_name] = json.dumps(menu_values, indent=4)
+    logger.info("Updated record %s", record_name)
 
 
 @implementer(INonInstallable)
