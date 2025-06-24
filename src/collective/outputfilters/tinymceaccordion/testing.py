@@ -1,4 +1,3 @@
-from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -33,14 +32,4 @@ INTEGRATION_TESTING = IntegrationTesting(
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, WSGI_SERVER_FIXTURE),
     name="Collective.Outputfilters.TinymceaccordionLayer:FunctionalTesting",
-)
-
-
-ACCEPTANCE_TESTING = FunctionalTesting(
-    bases=(
-        FIXTURE,
-        REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        WSGI_SERVER_FIXTURE,
-    ),
-    name="Collective.Outputfilters.TinymceaccordionLayer:AcceptanceTesting",
 )
