@@ -51,7 +51,7 @@ def set_registry_records(context):
 
     if "accordion" in items:
         # Nothing left to do.
-        return
+        return  # pragma: no cover
 
     items = f"{items} accordion"
     insert_block.update({"items": items})

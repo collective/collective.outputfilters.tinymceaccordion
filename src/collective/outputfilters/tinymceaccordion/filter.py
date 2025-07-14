@@ -4,6 +4,30 @@ from collective.outputfilters.tinymceaccordion.interfaces import ITinyMCEAccordi
 from copy import copy
 from zope.interface import implementer
 
+import os
+
+
+try:
+    # plone.base 3.1.0+
+    from plone.base.utils import is_truthy
+except ImportError:  # pragma: no cover
+
+    def is_truthy(value) -> bool:
+        """Return `True`, if "yes" was meant, `False` otherwise."""
+        return bool(value) and str(value).lower() in {
+            "1",
+            "y",
+            "yes",
+            "t",
+            "true",
+            "active",
+            "enabled",
+            "on",
+        }
+
+
+ACCORDION_ALWAYS_OPEN = is_truthy(os.getenv("ACCORDION_ALWAYS_OPEN"))
+
 
 def transform_bs5_collapse(html):
     # html = html.replace("\n", "")
@@ -73,14 +97,17 @@ def transform_bs5_collapse(html):
                 },
             )
 
+            bs5_acc_collapse_attrs = {
+                "id": f"{bs5_acc_collapse_id}",
+                "class": f"accordion-collapse collapse {collapse_show}",
+                "aria-labelledby": f"{bs5_acc_heading_id}",
+            }
+            if not ACCORDION_ALWAYS_OPEN:
+                bs5_acc_collapse_attrs["data-bs-parent"] = f"#{bs5_acc_id}"
+
             bs5_acc_collapse = soup.new_tag(
                 "div",
-                attrs={
-                    "id": f"{bs5_acc_collapse_id}",
-                    "class": f"accordion-collapse collapse {collapse_show}",
-                    "aria-labelledby": f"{bs5_acc_heading_id}",
-                    "data-bs-parent": f"#{bs5_acc_id}",
-                },
+                attrs=bs5_acc_collapse_attrs,
             )
 
             bs5_acc_collapse_body = soup.new_tag(

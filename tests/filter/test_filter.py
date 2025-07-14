@@ -16,6 +16,9 @@ class TestFilterFunctional:
         result = tree.xpath("//div[@class='accordion']")
         assert len(result) == 2
 
+        result = tree.xpath("//div[@data-bs-parent]")
+        assert len(result) == 5
+
 
 class TestFilterIntegration:
 
@@ -28,6 +31,26 @@ class TestFilterIntegration:
         tree = etree.parse(StringIO(markup_with_plugin), etree.HTMLParser())
         result = tree.xpath("//div[@class='accordion']")
         assert len(result) == 2
+
+        tree = etree.parse(StringIO(markup_with_plugin), etree.HTMLParser())
+        result = tree.xpath("//div[@data-bs-parent]")
+        assert len(result) == 5
+
+    def test_transform_with_plugin_markup_always_open(
+        self, markup_with_plugin_always_open
+    ):
+
+        tree = etree.parse(StringIO(markup_with_plugin_always_open), etree.HTMLParser())
+        result = tree.xpath("//details")
+        assert len(result) == 0
+
+        tree = etree.parse(StringIO(markup_with_plugin_always_open), etree.HTMLParser())
+        result = tree.xpath("//div[@class='accordion']")
+        assert len(result) == 2
+
+        tree = etree.parse(StringIO(markup_with_plugin_always_open), etree.HTMLParser())
+        result = tree.xpath("//div[@data-bs-parent]")
+        assert len(result) == 0
 
     def test_transform_without_plugin_markup(self, markup_without_plugin):
 

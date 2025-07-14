@@ -56,6 +56,19 @@ def markup_with_plugin():
 
 
 @pytest.fixture()
+def markup_with_plugin_always_open():
+    from collective.outputfilters.tinymceaccordion import filter as our_filter
+    from collective.outputfilters.tinymceaccordion.filter import transform_bs5_collapse
+
+    orig_always_open = our_filter.ACCORDION_ALWAYS_OPEN
+    our_filter.ACCORDION_ALWAYS_OPEN = True
+    try:
+        return transform_bs5_collapse(TINYMCE_MARKUP)
+    finally:
+        our_filter.ACCORDION_ALWAYS_OPEN = orig_always_open
+
+
+@pytest.fixture()
 def app(functional):
     return functional["app"]
 
