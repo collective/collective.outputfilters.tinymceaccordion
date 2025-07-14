@@ -57,6 +57,7 @@ setup(
         "Products.CMFPlone",
         "Products.GenericSetup",
         "beautifulsoup4",
+        "plone.base",
         "plone.outputfilters",
         "plone.registry",
         "zope.component",

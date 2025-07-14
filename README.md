@@ -104,6 +104,11 @@ Enable the accordion toolbar button in the `Menu` JSON Structure in the TinyMCE 
 
 Please check the TinyMCE controlpanel that the values are set correct.
 
+## Optional configuration
+
+If environment variable `ACCORDION_ALWAYS_OPEN` is set, accordion items stay open when another item is opened.
+See [Bootstrap accordion documentation](https://getbootstrap.com/docs/5.3/components/accordion/#always-open).
+
 ## Install Addon via buildout
 
 add `collective.outputfilters.tinymceaccordion` to your egg section in buildout.cfg
