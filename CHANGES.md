@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 1.1.0 (2025-07-15)
+
+
+### New features:
+
+- If environment variable `ACCORDION_ALWAYS_OPEN` is set, accordion items stay open when another item is opened.
+  @mauritsvanrees #16
+
 ## 1.0.1 (2025-06-24)
 
 
