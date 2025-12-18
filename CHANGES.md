@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0 (2025-12-18)
+
+
+### Breaking changes:
+
+- Switch to PEP 420 native namespace @1letter 
+
+
+### Internal:
+
+- update package with plone/meta @1letter 
+
 ## 1.1.0 (2025-07-15)
 
 
