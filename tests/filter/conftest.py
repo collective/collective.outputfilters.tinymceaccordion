@@ -7,7 +7,6 @@ from plone.testing.zope import Browser
 import pytest
 import transaction
 
-
 TINYMCE_MARKUP = """
 <h1>The Accordion plugin</h1>
 <p>This is a Demo</p>
