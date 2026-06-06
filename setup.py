@@ -49,8 +49,6 @@ setup(
     zip_safe=False,
     python_requires=">=3.10",
     install_requires=[
-        "setuptools",
-        "Products.CMFPlone",
         "Products.GenericSetup",
         "beautifulsoup4",
         "plone.base",
@@ -63,13 +61,17 @@ setup(
     ],
     extras_require={
         "test": [
-            "zest.releaser[recommended]",
-            "zestreleaser.towncrier",
-            "zest.pocompile",
+            "lxml",
+            "plone.api",
+            "plone.app.textfield",
             "plone.app.testing",
             "pytest",
             "pytest-cov",
             "pytest-plone>=0.5.0",
+            "transaction",
+            "zest.releaser[recommended]",
+            "zestreleaser.towncrier",
+            "zest.pocompile",
         ],
     },
     entry_points="""
