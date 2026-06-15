@@ -5,8 +5,6 @@ from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
-import collective.outputfilters.tinymceaccordion  # noQA
-
 
 class Layer(PloneSandboxLayer):
     defaultBases = (PLONE_FIXTURE,)
@@ -15,6 +13,8 @@ class Layer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
+        import collective.outputfilters.tinymceaccordion
+
         self.loadZCML(package=collective.outputfilters.tinymceaccordion)
 
     def setUpPloneSite(self, portal):
