@@ -20,9 +20,9 @@ jobs:
         - ["ubuntu", "ubuntu-latest"]
         config:
         # [Python version, visual name, tox env]
-        - ["3.14", "6.2 on py3.14", "py314-plone62"]
+        - ["3.13", "6.2 on py3.13", "py313-plone62"]
         - ["3.11", "6.2 on py3.11", "py311-plone62"]
-        - ["3.14", "6.1 on py3.14", "py314-plone61"]
+        - ["3.13", "6.1 on py3.13", "py313-plone61"]
         - ["3.11", "6.1 on py3.11", "py311-plone61"]
 
     runs-on: ${{ matrix.os[1] }}
@@ -41,8 +41,6 @@ jobs:
           tox.ini
           pyproject.toml
         python-version: ${{ matrix.config[0] }}
-    - name: Install libxml2 and libxslt to compile lxml
-      run: sudo apt install -y libxml2-dev and libxslt1-dev
 
 ##
 # Add extra configuration options in .meta.toml:
