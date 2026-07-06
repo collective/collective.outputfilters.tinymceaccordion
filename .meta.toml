@@ -38,3 +38,9 @@ omit =
     */upgrades/*
     */locales/*
 """
+
+[github]
+extra_lines_after_os_dependencies = """
+    - name: Install libxml2 and libxslt to compile lxml
+      run: sudo apt install -y libxml2-dev and libxslt1-dev
+"""

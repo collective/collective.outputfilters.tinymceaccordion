@@ -41,6 +41,8 @@ jobs:
           tox.ini
           pyproject.toml
         python-version: ${{ matrix.config[0] }}
+    - name: Install libxml2 and libxslt to compile lxml
+      run: sudo apt install -y libxml2-dev and libxslt1-dev
 
 ##
 # Add extra configuration options in .meta.toml:
