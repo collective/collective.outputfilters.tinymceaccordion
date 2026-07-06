@@ -1,27 +1,32 @@
 from collective.outputfilters.tinymceaccordion import PACKAGE_NAME
+from collective.outputfilters.tinymceaccordion.tests import IntegrationTest
 
 
-class TestSetupInstall:
-    def test_addon_installed(self, installer):
+class TestSetupInstall(IntegrationTest):
+    def test_addon_installed(self):
         """Test if collective.outputfilters.tinymceaccordion is installed."""
-        assert installer.is_product_installed(PACKAGE_NAME) is True
+        installer = self.get_installer()
+        self.assertTrue(installer.is_product_installed(PACKAGE_NAME))
 
-    def test_browserlayer(self, browser_layers):
+    def test_browserlayer(self):
         """Test that ICollectiveOutputfiltersTinyMCEAccordionLayer is registered."""
         from collective.outputfilters.tinymceaccordion.interfaces import (
             ICollectiveOutputfiltersTinyMCEAccordionLayer,
         )
 
-        assert ICollectiveOutputfiltersTinyMCEAccordionLayer in browser_layers
+        browser_layers = self.browser_layers()
+        self.assertTrue(ICollectiveOutputfiltersTinyMCEAccordionLayer in browser_layers)
 
-    def test_noninstallable(self, not_installables):
-        assert "collective.outputfilters.tinymceaccordion.upgrades" in not_installables
+    def test_noninstallable(self):
+        not_installables = self.not_installables()
+        self.assertIn(f"{PACKAGE_NAME}.upgrades", not_installables)
 
-    def test_latest_version(self, profile_last_version):
+    def test_latest_version(self):
         """Test latest version of default profile."""
-        assert profile_last_version(f"{PACKAGE_NAME}:default") == "1000"
+        profile_last_version = self.profile_last_version(f"{PACKAGE_NAME}:default")
+        self.assertTrue(profile_last_version == "1000")
 
-    def test_registry_records(self, registry):
+    def test_registry_records(self):
         from collective.outputfilters.tinymceaccordion.setuphandlers import (
             CUSTOM_ATTRIBUTES,
         )
@@ -30,20 +35,21 @@ class TestSetupInstall:
 
         import json
 
+        registry = self.get_registry()
         record = registry.records.get("plone.plugins")
         for plugin in PLUGINS:
-            assert plugin in record.value
+            self.assertTrue(plugin in record.value)
 
         record = registry.records.get("plone.valid_tags")
         for valid_tag in VALID_TAGS:
-            assert valid_tag in record.value
+            self.assertTrue(valid_tag in record.value)
 
         record = registry.records.get("plone.custom_attributes")
         for custom_attribute in CUSTOM_ATTRIBUTES:
-            assert custom_attribute in record.value
+            self.assertTrue(custom_attribute in record.value)
 
         record = registry.records.get("plone.menu")
         menu_values = json.loads(record.value)
         items = menu_values.get("insert", {}).get("items", "")
 
-        assert "accordion" in items
+        self.assertTrue("accordion" in items)

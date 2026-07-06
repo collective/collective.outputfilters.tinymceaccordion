@@ -1,33 +1,11 @@
-# Adding and updating locales
+# update locales
 
-For every language you want to translate into you need a
-locales/[language]/LC_MESSAGES/collective.task.po
-(e.g. locales/de/LC_MESSAGES/collective.task.po)
+run both commands
 
-For German
-
-```console
-$ mkdir de
+```
+uvx i18ndude rebuild-pot --pot src/collective/outputfilters/tinymceaccordion/locales/collective.outputfilters.tinymceaccordion.pot --create collective.outputfilters.tinymceaccordion ./src/collective/outputfilters/tinymceaccordion
 ```
 
-For updating locales
-
-```console
-./bin/update_locale
 ```
-
-## Note
-
-The script uses gettext package for internationalization.
-
-Install it before running the script.
-
-## On macOS
-
-```console
-brew install gettext
+uvx i18ndude sync --pot ./src/collective/outputfilters/tinymceaccordion/locales/collective.outputfilters.tinymceaccordion.pot ./src/collective/outputfilters/tinymceaccordion/locales/*/LC_MESSAGES/collective.outputfilters.tinymceaccordion.po
 ```
-
-## On Windows
-
-see https://mlocati.github.io/articles/gettext-iconv-windows.html

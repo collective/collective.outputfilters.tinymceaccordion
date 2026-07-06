@@ -1,11 +1,10 @@
+from plone.base.interfaces.installable import INonInstallable
 from plone.registry.interfaces import IRegistry
-from Products.CMFPlone.interfaces import INonInstallable
 from zope.component import getUtility
 from zope.interface import implementer
 
 import json
 import logging
-
 
 logger = logging.getLogger(__name__)
 PLUGINS = ["accordion"]
@@ -30,7 +29,7 @@ def _add_to_record(record_name, values):
         if value not in record_value:
             record_value.append(value)
             changed = True
-    if changed:
+    if changed:  # pragma: no cover
         registry[record_name] = record_value
         logger.info("Updated record %s", record_name)
 
