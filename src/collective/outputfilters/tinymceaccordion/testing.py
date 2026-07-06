@@ -21,6 +21,16 @@ class Layer(PloneSandboxLayer):
         applyProfile(portal, "collective.outputfilters.tinymceaccordion:default")
 
 
+class LayerAccordionAlwaysOpen(Layer):
+
+    def setUpZope(self, app, configurationContext):
+
+        import os
+
+        os.environ["ACCORDION_ALWAYS_OPEN"] = "1"
+        super().setUpZope(app, configurationContext)
+
+
 FIXTURE = Layer()
 
 INTEGRATION_TESTING = IntegrationTesting(
@@ -28,6 +38,12 @@ INTEGRATION_TESTING = IntegrationTesting(
     name="Collective.Outputfilters.TinymceaccordionLayer:IntegrationTesting",
 )
 
+FIXTURE_ACCORDION_ALWAYS_OPEN = LayerAccordionAlwaysOpen()
+
+INTEGRATION_ACCORDION_ALWAYS_OPEN_TESTING = IntegrationTesting(
+    bases=(FIXTURE_ACCORDION_ALWAYS_OPEN,),
+    name="Collective.Outputfilters.TinymceaccordionLayer:IntegrationTestingAccordionAlwaysOpen",
+)
 
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, WSGI_SERVER_FIXTURE),

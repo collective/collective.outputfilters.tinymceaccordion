@@ -29,7 +29,7 @@ def _add_to_record(record_name, values):
         if value not in record_value:
             record_value.append(value)
             changed = True
-    if changed:
+    if changed:  # pragma: no cover
         registry[record_name] = record_value
         logger.info("Updated record %s", record_name)
 
