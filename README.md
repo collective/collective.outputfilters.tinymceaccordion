@@ -119,20 +119,72 @@ add `collective.outputfilters.tinymceaccordion` to your egg section in buildout.
 
 ## Install a Testenvironment
 
-run `make build`
+```
+git clone https://github.com/collective/collective.outputfilters.tinymceaccordion.git
+```
+
+```
+python3 -m venv .venv
+```
+
+```
+source .venv/bin/activate
+```
+
+```
+pip install -r requirements.txt
+```
+
+```
+pip install cookiecutter
+```
+
+```
+cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
+```
 
 ## Start the instance
 
-run `make start`
+```
+runwsgi -v instance/etc/zope.ini
+```
 
-## Format and Linting
+## Format, Linting, Dependency Checks
 
-run `make check`
+```
+uvx --with tox-uv tox -r -e lint
+```
+
+```
+uvx --with tox-uv tox -r -e dependencies
+```
+
+```
+uvx --with tox-uv tox -r -e circular
+```
 
 ## Testing
 
-run `make test`
+```
+uvx --with tox-uv tox -r -e test
+```
 
 ## Testing with coverage
 
-run `make test-coverage`
+```
+uvx --with tox-uv tox -r -e coverage
+```
+
+## Run and Debug Tests
+
+run a single test
+
+```
+zope-testrunner -pvcx --test-path=src -t TESTNAME
+```
+
+run all tests
+
+```
+zope-testrunner -pvcx --test-path=src
+```
