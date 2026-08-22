@@ -1,0 +1,2 @@
+update config with plone.meta
+disable circular check in gh-actions @1letter

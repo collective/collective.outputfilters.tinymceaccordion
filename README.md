@@ -136,3 +136,7 @@ run `make test`
 ## Testing with coverage
 
 run `make test-coverage`
+
+## Update locale
+
+run `uvx i18ndude sync --pot ./src/collective/outputfilters/tinymceaccordion/locales/collective.outputfilters.tinymceaccordion.pot ./src/collective/outputfilters/tinymceaccordion/locales/*/LC_MESSAGES/collective.outputfilters.tinymceaccordion.po`
