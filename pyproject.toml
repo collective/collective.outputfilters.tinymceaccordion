@@ -10,7 +10,7 @@ requires = ["setuptools>=68.2,<83", "wheel"]
 
 [project]
 name = "collective.outputfilters.tinymceaccordion"
-version = "2.0.1"
+version = "2.0.2.dev0"
 description = "Addon for Plone 6 - Plone Outputfilter to transform TinyMCE Markup to Bootstrap5 Accordion"
 classifiers = [
     "Development Status :: 4 - Beta",
