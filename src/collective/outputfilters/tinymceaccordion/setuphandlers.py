@@ -6,7 +6,6 @@ from zope.interface import implementer
 import json
 import logging
 
-
 logger = logging.getLogger(__name__)
 PLUGINS = ["accordion"]
 VALID_TAGS = ["summary", "details", "button"]

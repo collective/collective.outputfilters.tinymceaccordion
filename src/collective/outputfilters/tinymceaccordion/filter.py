@@ -6,7 +6,6 @@ from zope.interface import implementer
 
 import os
 
-
 try:
     # plone.base 3.1.0+
     from plone.base.utils import is_truthy
