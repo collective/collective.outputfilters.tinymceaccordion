@@ -1,8 +1,80 @@
 # Generated from:
-# https://github.com/plone/meta/tree/main/src/plone/meta/default
+# https://github.com/plone/meta/tree/2.x/src/plone/meta/default
 # See the inline comments on how to expand/tweak this configuration file
 [build-system]
 requires = ["setuptools>=68.2,<80", "wheel"]
+
+# START-MARKER-MANUAL-CONFIG
+# Anything from here until END-MARKER-MANUAL-CONFIG
+# will be kept by plone.meta
+
+[project]
+name = "collective.outputfilters.tinymceaccordion"
+version = "2.0.1.dev0"
+description = "Addon for Plone 6 - Plone Outputfilter to transform TinyMCE Markup to Bootstrap5 Accordion"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.0",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: 6.2",
+    "Framework :: Plone :: Addon",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+license = "GPL-2.0-only"
+dynamic = ["readme"]
+requires-python = ">=3.10"
+authors = [
+    {name = "1letter",email = "1letter@gmx.de"},
+]
+dependencies = [
+    "Products.CMFPlone",
+    "Products.GenericSetup",
+    "beautifulsoup4",
+    "plone.base",
+    "plone.outputfilters",
+    "plone.registry",
+    "setuptools",
+    "zope.component",
+    "zope.i18nmessageid",
+    "zope.interface",
+    "zope.publisher",
+]
+keywords = ["Python", "Plone", "CMS"]
+
+[project.scripts]
+update_locale = "collective.outputfilters.tinymceaccordion.locales.update:update_locale"
+
+[project.entry-points."plone.autoinclude.plugin"]
+target = "plone"
+
+[project.optional-dependencies]
+test = [
+    "plone.app.testing",
+    "pytest",
+    "pytest-cov",
+    "pytest-plone>=0.5.0",
+    "zest.pocompile",
+    "zest.releaser[recommended]",
+    "zestreleaser.towncrier",
+]
+
+[project.urls]
+PyPI = "https://pypi.org/project/collective.outputfilters.tinymceaccordion/"
+Source = "https://github.com/collective/collective.outputfilters.tinymceaccordion"
+Tracker = "https://github.com/collective/collective.outputfilters.tinymceaccordion/issues"
+Issues = "https://github.com/collective/collective.outputfilters.tinymceaccordion/issues"
+Changelog = "https://github.com/collective/collective.outputfilters.tinymceaccordion/blob/master/CHANGES.md"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md", "CHANGES.md"], content-type = "text/markdown"}
+# END-MARKER-MANUAL-CONFIG
 
 [tool.towncrier]
 directory = "news/"
