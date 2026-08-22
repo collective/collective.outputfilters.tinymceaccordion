@@ -2,6 +2,15 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.1 (2026-08-22)
+
+
+### Internal
+
+- Move package metadata from `setup.py` to `pyproject.toml` @plone 
+- update config with plone.meta
+  disable circular check in gh-actions @1letter 
+
 ## 2.0.0 (2025-12-18)
 
 
