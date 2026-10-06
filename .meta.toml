@@ -17,6 +17,7 @@ robot_report.html
 forest.dot
 forest.json
 .lock
+.mxdev_cache
 """
 
 
